@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const guestSchema = new mongoose.Schema({
+const staffSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -16,19 +16,14 @@ const guestSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        default: 'guest'
+        enum: ['admin', 'staff'],
+        default: 'staff'
     },
     contact: {
         type: String
-    },
-    birthday: {
-        type: Date // Adding the birthday field of type Date
-    },
-    country: {
-        type: String // Adding the country field
     }
-}, { timestamps: true });
+},{timestamps: true,});
 
-const Guest = mongoose.model('Guest', guestSchema);
+const Staff = mongoose.model('Staff', staffSchema);
 
-module.exports = Guest;
+module.exports = Staff;
