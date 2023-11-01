@@ -22,6 +22,9 @@ app.use((req, res, next)=> {
 
 // Routes
 app.use('/api/auth', require('./src/routes/authRoutes'));
+app.use('/api/roomtypes', require('./src/routes/roomTypeRoutes'));
+app.use('/api/room', require('./src/routes/roomRoutes'));
+
 
 // Connect to MongoDB
 mongoose

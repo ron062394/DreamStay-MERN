@@ -11,7 +11,7 @@ const roomTypeSchema = new mongoose.Schema({
     },
     maxOccupancy: {
         type: Number,
-        require: True
+        require: true
     },
     price: {
         type: Number,
