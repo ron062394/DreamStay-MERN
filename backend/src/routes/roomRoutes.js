@@ -6,7 +6,7 @@ const {
   createRoom,
   updateRoom,
   deleteRoom
-} = require('../controllers/roomController');
+} = require('../controllers/room');
 
 router.get('/', getAllRooms);
 router.get('/:id', getRoomById);

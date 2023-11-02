@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const Staff = require('../models/staffModel');
-const Guest =require('../models/userModel')
+const Staff = require('../models/staff');
+const Guest =require('../models/guest')
 
 const registerStaff = async (req, res) => {
   try {

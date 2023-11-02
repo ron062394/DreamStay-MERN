@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { registerStaff, loginStaff, registerGuest, loginGuest } = require('../controllers/authController');
+const { registerStaff, loginStaff, registerGuest, loginGuest } = require('../controllers/auth');
 
 
 // Register a new )staff)
