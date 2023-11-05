@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const reservationSchema = new mongoose.Schema({
-  user: {
+  guest: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Guest', // Reference to the User model
     required: true

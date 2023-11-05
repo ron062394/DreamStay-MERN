@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  user: {
+  guest: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Guest',
     required: true
   },
   room: {
