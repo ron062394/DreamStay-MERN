@@ -4,7 +4,7 @@ const {
     createReservation,
     getAllReservations,
     cancelReservation
-} = require('../controllers/reservationController');
+} = require('../controllers/reservation');
 
 router.post('/', createReservation);
 router.get('/', getAllReservations);
