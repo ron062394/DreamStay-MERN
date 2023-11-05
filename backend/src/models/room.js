@@ -15,7 +15,7 @@ const roomSchema = new mongoose.Schema({
     type: Boolean,
     default: true
   }
-});
+}, { timestamps: true });
 
 const Room = mongoose.model('Room', roomSchema);
 
