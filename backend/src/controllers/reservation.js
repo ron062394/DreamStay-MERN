@@ -2,10 +2,10 @@ const Reservation = require('../models/reservation');
 
 // Create a new reservation
 const createReservation = async (req, res) => {
-  const { user, room, checkInDate, checkOutDate, totalCost, paymentStatus } = req.body;
+  const { guest, room, checkInDate, checkOutDate, totalCost, paymentStatus } = req.body;
 
   try {
-    const newReservation = new Reservation({ user, room, checkInDate, checkOutDate, totalCost, paymentStatus });
+    const newReservation = new Reservation({ guest, room, checkInDate, checkOutDate, totalCost, paymentStatus });
     const savedReservation = await newReservation.save();
     res.status(201).json(savedReservation);
   } catch (error) {
