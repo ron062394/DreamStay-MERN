@@ -16,7 +16,7 @@ const createReservation = async (req, res) => {
 // Get all reservations
 const getAllReservations = async (req, res) => {
   try {
-    const reservations = await Reservation.find().populate('user').populate('room');
+    const reservations = await Reservation.find().populate('guest').populate('room');
     res.status(200).json(reservations);
   } catch (error) {
     res.status(500).json({ message: error.message });
