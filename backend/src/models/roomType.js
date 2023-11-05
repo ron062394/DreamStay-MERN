@@ -18,7 +18,7 @@ const roomTypeSchema = new mongoose.Schema({
         required: true
     },
     amenities: [String]
-})
+} , { timestamps: true })
 
 const RoomType = mongoose.model('RoomType', roomTypeSchema);
 
