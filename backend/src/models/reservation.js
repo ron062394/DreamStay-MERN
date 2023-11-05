@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const reservationSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Guest', // Reference to the User model
     required: true
   },
   room: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Room',
+    ref: 'Room', // Reference to the Room model
     required: true
   },
   checkInDate: {
@@ -25,10 +25,9 @@ const reservationSchema = new mongoose.Schema({
   },
   paymentStatus: {
     type: String,
-    enum: ['pending', 'paid'],
-    default: 'pending'
+    default: 'Pending' // 'Pending', 'Paid', 'Cancelled', etc.
   }
-});
+}, { timestamps: true });
 
 const Reservation = mongoose.model('Reservation', reservationSchema);
 

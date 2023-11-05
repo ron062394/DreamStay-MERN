@@ -21,9 +21,10 @@ app.use((req, res, next)=> {
 })
 
 // Routes
-app.use('/api/auth', require('./src/routes/authRoutes'));
-app.use('/api/roomtypes', require('./src/routes/roomTypeRoutes'));
-app.use('/api/room', require('./src/routes/roomRoutes'));
+app.use('/api/auth', require('./src/routes/auth'));
+app.use('/api/roomtypes', require('./src/routes/roomType'));
+app.use('/api/rooms', require('./src/routes/room'));
+app.use('/api/reservations', require('./src/routes/reservation'));
 
 
 // Connect to MongoDB
