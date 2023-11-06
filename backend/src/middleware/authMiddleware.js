@@ -4,13 +4,13 @@ require('dotenv').config();
 
 const authenticateUser = async (req, res, next) => {
   try {
-    const token = req.header('Authorization'); // Assuming the token is sent in the Authorization header
+    const token = req.header('Authorization');
     
     if (!token) {
       return res.status(401).json({ message: 'Authentication failed: No token provided' });
     }
 
-    const decoded = jwt.verify(token.substring(7), process.env.JWT_SECRET); // Use a strong, secure secret key
+    const decoded = jwt.verify(token.substring(7), process.env.JWT_SECRET);
   
     const user = await User.findOne({ _id: decoded.userId });
 
