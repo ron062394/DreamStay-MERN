@@ -5,9 +5,8 @@ const createReservation = async (req, res) => {
   const { guest, room, checkInDate, checkOutDate, totalCost, paymentStatus } = req.body;
 
   try {
-    const newReservation = new Reservation({ guest, room, checkInDate, checkOutDate, totalCost, paymentStatus });
-    const savedReservation = await newReservation.save();
-    res.status(201).json(savedReservation);
+    const newReservation = await Reservation.create({ guest, room, checkInDate, checkOutDate, totalCost, paymentStatus });
+    res.status(201).json(newReservation);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
