@@ -12,5 +12,14 @@ const createReview = async (req, res) => {
   }
 };
 
+const getAllReviews = async (req, res) => {
+    try {
+      const reviews = await Review.find().populate('user').populate('room');
+      res.status(200).json(reviews);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+};
+  
 
 module.exports = { createReview, getAllReviews };
