@@ -26,6 +26,7 @@ app.use('/api/roomtypes', require('./src/routes/roomType'));
 app.use('/api/rooms', require('./src/routes/room'));
 app.use('/api/reservations', require('./src/routes/reservation'));
 app.use('/api/reviews', require('./src/routes/reservation'));
+app.use('/api/locations', require('./src/routes/location'));
 
 
 // Connect to MongoDB
