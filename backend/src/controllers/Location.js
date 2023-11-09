@@ -1,6 +1,5 @@
 const Location = require('../models/location');
 
-// Create a new location
 const createLocation = async (req, res) => {
   const { name } = req.body;
 
@@ -20,9 +19,6 @@ const createLocation = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   }
-
 };
-
-
 
 module.exports = { createLocation, getAllLocations };
