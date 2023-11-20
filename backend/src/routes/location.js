@@ -5,6 +5,10 @@ const { createLocation, getAllLocations } = require('../controllers/locationCont
 //Create Location
 router.post('/', createLocation);
 
+//Update Location
+router.put('/:id', locationController.updateLocation); 
+
+
 //Get all Location
 router.get('/', getAllLocations);
 
