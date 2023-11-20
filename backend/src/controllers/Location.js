@@ -39,7 +39,6 @@ const updateLocation = async (req, res) => {
 
 const deleteLocation = async (req, res) => {
   const locationId = req.params.id;
-
   try {
     const deletedLocation = await Location.findByIdAndDelete(locationId);
     if (!deletedLocation) {
@@ -51,4 +50,9 @@ const deleteLocation = async (req, res) => {
   }
 };
 
-module.exports = { createLocation, getAllLocations, updateLocation };
+module.exports = { 
+  createLocation,
+  getAllLocations,
+  updateLocation,
+  deleteLocation
+};
