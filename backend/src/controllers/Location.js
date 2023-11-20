@@ -37,4 +37,18 @@ const updateLocation = async (req, res) => {
   }
 };
 
+const deleteLocation = async (req, res) => {
+  const locationId = req.params.id;
+
+  try {
+    const deletedLocation = await Location.findByIdAndDelete(locationId);
+    if (!deletedLocation) {
+      return res.status(404).json({ message: 'Location not found' });
+    }
+    res.status(200).json({ message: 'Location deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = { createLocation, getAllLocations, updateLocation };
