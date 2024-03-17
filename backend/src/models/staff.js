@@ -24,6 +24,7 @@ const staffSchema = new mongoose.Schema({
     }
 },{timestamps: true,});
 
-const Staff = mongoose.model('Staff', staffSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Staff = db.model('Staff', staffSchema);
 
 module.exports = Staff;

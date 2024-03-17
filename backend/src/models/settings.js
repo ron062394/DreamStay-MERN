@@ -9,6 +9,7 @@ const settingsSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const Settings = mongoose.model('Settings', settingsSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Settings = db.model('Settings', settingsSchema);
 
 module.exports = Settings;

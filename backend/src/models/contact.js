@@ -9,6 +9,7 @@ const contactSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const Contact = mongoose.model('Contact', contactSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Contact = db.model('Contact', contactSchema);
 
 module.exports = Contact;

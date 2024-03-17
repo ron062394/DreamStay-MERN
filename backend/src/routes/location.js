@@ -5,7 +5,7 @@ const {
     getAllLocations,
     updateLocation,
     deleteLocation
-} = require('../controllers/locationController');
+} = require('../controllers/location');
 
 //Create Location
 router.post('/', createLocation);

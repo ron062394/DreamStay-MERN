@@ -9,8 +9,7 @@ const locationSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const Location = mongoose.model('Location', locationSchema);
-
-
+const db = mongoose.connection.useDb('DreamStay')
+const Location = db.model('Location', locationSchema);
 
 module.exports = Location;

@@ -29,6 +29,7 @@ const reservationSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const Reservation = mongoose.model('Reservation', reservationSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Reservation = db.model('Reservation', reservationSchema);
 
 module.exports = Reservation;

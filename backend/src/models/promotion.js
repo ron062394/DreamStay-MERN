@@ -9,6 +9,7 @@ const promotionSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const Promotion = mongoose.model('Promotion', promotionSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Promotion = db.model('Promotion', promotionSchema);
 
 module.exports = Promotion;

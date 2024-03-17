@@ -20,6 +20,7 @@ const roomTypeSchema = new mongoose.Schema({
     amenities: [String]
 } , { timestamps: true })
 
-const RoomType = mongoose.model('RoomType', roomTypeSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const RoomType = db.model('RoomType', roomTypeSchema);
 
 module.exports = RoomType;

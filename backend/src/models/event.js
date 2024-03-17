@@ -10,6 +10,7 @@ const eventSchema = new mongoose.Schema({
   timestamps: true // Enable timestamps
 });
 
-const Event = mongoose.model('Event', eventSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Event = db.model('Event', eventSchema);
 
 module.exports = Event;

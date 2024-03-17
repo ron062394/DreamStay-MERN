@@ -20,6 +20,7 @@ const reviewSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const Review = mongoose.model('Review', reviewSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Review = db.model('Review', reviewSchema);
 
 module.exports = Review;

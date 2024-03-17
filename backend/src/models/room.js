@@ -17,6 +17,7 @@ const roomSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const Room = mongoose.model('Room', roomSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Room = db.model('Room', roomSchema);
 
 module.exports = Room;

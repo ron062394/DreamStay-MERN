@@ -29,6 +29,7 @@ const guestSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Guest = mongoose.model('Guest', guestSchema);
+const db = mongoose.connection.useDb('DreamStay')
+const Guest = db.model('Guest', guestSchema);
 
 module.exports = Guest;
